@@ -1,0 +1,4 @@
+venv/
+trivia/trivia/__pycache__/
+trivia/db.sqlite3
+
