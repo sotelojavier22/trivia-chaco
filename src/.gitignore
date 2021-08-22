@@ -1,4 +1,6 @@
 venv/
 trivia/trivia/__pycache__/
 trivia/db.sqlite3
+trivia/quiz/migrations/
+trivia/quiz/__pycache__/
 
