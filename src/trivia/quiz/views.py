@@ -5,8 +5,6 @@ from django.urls import reverse
 from .models import Pregunta, Opcion, Respuesta
 
 def vista_pregunta(request, id_pregunta):
-    pregunta = get_object_or_404(Pregunta, orden = 1)
+    pregunta = get_object_or_404(Pregunta, orden = id_pregunta)
     return render(request, 'quiz/mostrar_pregunta.html', {'pregunta': pregunta})
-    
 
-# Create your views here.
