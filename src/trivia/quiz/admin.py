@@ -8,7 +8,7 @@ class OpcionEnLinea(admin.TabularInline):
 
 class PreguntaAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None,          {'fields': ['enunciado', 'categoria']}),
+        (None,          {'fields': ['enunciado', 'categoria', 'orden']}),
     ]
     inlines = [OpcionEnLinea]
 
