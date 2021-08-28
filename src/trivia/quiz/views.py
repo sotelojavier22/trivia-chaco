@@ -12,5 +12,15 @@ def vista_pregunta(request, pregunta_orden):
     return render(request, 'quiz/mostrar_pregunta.html', {'pregunta': pregunta})
 
 def responder(request, id_pregunta):
-    return HttpResponse('ok')
+    pregunta = get_object_or_404(Pregunta, pk = id_pregunta)
+
+    if pregunta.orden >= 5:
+        return HttpResponseRedirect(reverse('quiz:ruta_resultado'))
+    else:
+        siguiente = pregunta.orden + 1
+        return HttpResponseRedirect(reverse('quiz:ruta_pregunta', args=(siguiente,)))
+
+def mostrar_resultado(request):
+    return HttpResponse("ganaste!")
+
 
