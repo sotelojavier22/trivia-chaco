@@ -11,5 +11,6 @@ class PreguntaAdmin(admin.ModelAdmin):
         (None,          {'fields': ['enunciado', 'categoria', 'orden']}),
     ]
     inlines = [OpcionEnLinea]
+    list_display= ['enunciado','categoria','orden']
 
 admin.site.register(Pregunta,PreguntaAdmin)
