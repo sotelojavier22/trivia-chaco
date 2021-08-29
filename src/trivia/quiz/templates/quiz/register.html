@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static '/site.webmanifest'%}">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro</title>
+    <script src="https://kit.fontawesome.com/7cd27a3b23.js" crossorigin="anonymous"></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/estilo.css" %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/normalize.css" %}'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="Copyrigth" content="triviachaco Inc.">
+    <meta name="robots" content="index">
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav__ul">
+                <li class="nav__li">
+                    <a href=""><img src="{%static 'img/Tc.png' %}" alt=""></a>
+                </li>
+                <li class="nav__li fas fa-user-plus">
+                    <a href="/register">Registrarse</a>
+                </li>
+                <li class="nav__li fas fa-users">
+                    <a href="/contact">Sobre Nosotros</a>
+                </li>
+                <a href="/jugar"><button class="nav__a"><b class="type fas fa-gamepad"></b></a></button> </a>
+                
+            </ul>
+        </nav>
+    </header>
+    <div class="flex-container-dos">
+        <form class="form">
+            <h2>
+                Crea tu cuenta
+            </h2>
+            <div class="form__section">
+                <input type="email" class="form__input" placeholder="Escribí tu E-mail">
+            </div>
+            <div class="form__section">
+                <input type="password" class="form__input" placeholder="Contraseña">
+            </div>
+            <div class="form__section">
+                <input type="password" class="form__input" placeholder="Repetir Contraseña">
+            </div>
+            <div class="form__section">
+                <input type="submit" value="Crear" class="form__input"> <i class="fas fa-check"></i>
+            </div>
+            <div>
+                <table>
+
+                </table>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+        Copyrigth - Todos los derechos reservados. <br>
+        TriviaChaco Inc. 
+    </footer>
+</body>
+</html>
+
