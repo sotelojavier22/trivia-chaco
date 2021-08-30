@@ -8,6 +8,9 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Pregunta, Opcion, Respuesta
 
+def index(request):
+    return render(request, 'quiz/index.html', {})
+    
 def registrarse(request):
     if request.method == 'POST':
         form=UserCreationForm(request.POST)

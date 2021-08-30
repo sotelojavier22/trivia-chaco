@@ -2,17 +2,13 @@
 {% load static %}
 <html>
 <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/apple-touch-icon.png'%}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon-32x32.png'%}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon-16x16.png'%}">
-    <link rel="manifest" href="{% static '/site.webmanifest'%}">
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Registro</title>
+    <title>Inicio</title>
     <script src="https://kit.fontawesome.com/7cd27a3b23.js" crossorigin="anonymous"></script>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/estilo.css" %}'>
     <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/normalize.css" %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/estilo.css" %}'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -28,7 +24,7 @@
                     <a href=""><img src="{%static 'img/Tc.png' %}" alt=""></a>
                 </li>
                 <li class="nav__li fas fa-user-plus">
-                    <a href="/register">Registrarse</a>
+                    <a href="registrarse">Registrarse</a>
                 </li>
                 <li class="nav__li fas fa-users">
                     <a href="/contact">Sobre Nosotros</a>
@@ -38,35 +34,37 @@
             </ul>
         </nav>
     </header>
-    <div class="flex-container-dos">
-        <form class="form" method="post">
-            {% csrf_token %}
-            <h2>
-                Crea tu cuenta
-            </h2>
-            <div class="form__section">
-                <input type="text" class="form__input" placeholder="Escribí tu Usuario" name="username"  required id="id_username">
+<div class="background__img">
+    <div class="flex-container">
+        <div class="div">
+            <div class="div__section">
+                <h1 class="div__text__h1">
+                    TriviaChaco, The Game:
+                </h1>
+                <h2 class="div__text__h2">
+                    Divertido y entretenido. 
+                    Animate a contestar preguntas de todo tipo para conocer y 
+                    probarte a vos mismo sobre el conocimiento de la provicia del Chaco. <br>
+                    ¡Registrate ya!
+                </h2>
             </div>
-            <div class="form__section">
-                <input type="password" class="form__input" placeholder="Contraseña" name="password1"  autocomplete="new-password" required id="id_password1">
+            <div class="div__section">
+                <a href="registrarse">
+                    <button>
+                        Registrarse
+                    </button>
+                </a>
             </div>
-            <div class="form__section">
-                <input type="password" class="form__input" placeholder="Repetir Contraseña" name="password2" autocomplete="new-password" required id="id_password2">
-            </div>
-            <div class="form__section">
-                <input type="submit" value="Crear" class="form__input"> <i class="fas fa-check"></i>
-            </div>
-            <div>
-                <table>
-
-                </table>
-            </div>
-        </form>
+        </div>
+        <div class="div-img">
+            <a href="https://rewildingargentina.org/" target="__blank"><img src="{%static 'img/rewilding.jpg'%}" alt="Rewilding"></a>
+            <h4>Conoce más sobre sobre la exótica fauna y flora que posee nuestro impenetrable chaqueño haciendo clic en la imagen arriba.</h4>
+        </div>
     </div>
+</div>
     <footer class="footer">
         Copyrigth - Todos los derechos reservados. <br>
         TriviaChaco Inc. 
     </footer>
 </body>
 </html>
- 

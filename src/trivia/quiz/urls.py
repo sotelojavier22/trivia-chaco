@@ -6,7 +6,7 @@ from . import views
 
 app_name = 'quiz'
 urlpatterns = [
-    path('',RedirectView.as_view(pattern_name='quiz:ruta_iniciar')),
+    path('',views.index, name = 'ruta_index'),
     path('registrarse/', views.registrarse, name='ruta_registrarse'),
     path('', include('django.contrib.auth.urls')),
     path('iniciar/',views.iniciar, name='ruta_iniciar'),
