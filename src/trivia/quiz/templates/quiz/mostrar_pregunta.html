@@ -3,16 +3,6 @@
 
     <form action="{% url 'quiz:ruta_responder' pregunta.id %}" method="post">
         {% csrf_token %}
-
-    
-        
-          
-    
-
-        
-    
-    @@ -11,4 +12,5 @@
-  
         <fieldset>
             <legend><h1>{{ pregunta.enunciado }}</h1></legend>
             {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
