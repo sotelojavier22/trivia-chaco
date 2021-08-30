@@ -1,13 +1,26 @@
-<form action="{% url 'quiz:ruta_responder' pregunta.id %}" method="post">
-    {% csrf_token %}
-    <fieldset>
-        <legend><h1>{{ pregunta.enunciado }}</h1></legend>
-        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-        {% for opcion in pregunta.opcion_set.all %}
-            <input type="radio" name="opcion" id="opcion{{ forloop.counter }}" value="{{ opcion.id }}">
-            <label for="opcion{{ forloop.counter }}">{{ opcion.texto_opcion }}</label><br>
-        {% endfor %}
-    </fieldset>
-    <input type="submit" value="Responder">
-    </form>
+{% extends 'quiz/base.html' %}
+{% block content %}
+
+    <form action="{% url 'quiz:ruta_responder' pregunta.id %}" method="post">
+        {% csrf_token %}
+
     
+        
+          
+    
+
+        
+    
+    @@ -11,4 +12,5 @@
+  
+        <fieldset>
+            <legend><h1>{{ pregunta.enunciado }}</h1></legend>
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            {% for opcion in pregunta.opcion_set.all %}
+                <input type="radio" name="opcion" id="opcion{{ forloop.counter }}" value="{{ opcion.id }}">
+                <label for="opcion{{ forloop.counter }}">{{ opcion.texto_opcion }}</label><br>
+            {% endfor %}
+        </fieldset>
+        <input type="submit" value="Responder">
+        </form>
+{% endblock %}
