@@ -5,7 +5,7 @@
     
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Juego</title>
+    <title>Contacto</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/estilo.css" %}'>
     <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/normalize.css" %}'>
@@ -17,20 +17,21 @@
     <script src='main.js'></script>
 </head>
 <body>
-<div class="caja">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis suscipit dolorum veniam ipsam laborum? Unde porro accusamus consectetur quis culpa, adipisci laborum libero rerum! Eius incidunt quae consequuntur exercitationem voluptates.
-</div>
+    
     <header>
         <nav>
             <ul>
                 <li>
-                    <a href="">TriviaChaco</a>
+                    <a href="">TriviaChaco
+                    </a>
                 </li>
                 <li>
                     <a href="/register">Registrarse</a>
+
                 </li>
                 <li>
                     <a href="/contact">Contacto</a>
+
                 </li>
                 <li>
                     <a href="/jugar"> Jugar</a>
@@ -38,21 +39,26 @@
             </ul>
         </nav>
     </header>
-
-    <form action="{% url 'quiz:ruta_responder' pregunta.id %}" method="post">
-        {% csrf_token %}
-        <fieldset>
-            <legend><h1>{{ pregunta.enunciado }}</h1></legend>
-            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-            {% for opcion in pregunta.opcion_set.all %}
-                <input type="radio" name="opcion" id="opcion{{ forloop.counter }}" value="{{ opcion.id }}">
-                <label for="opcion{{ forloop.counter }}">{{ opcion.texto_opcion }}</label><br>
-            {% endfor %}
-        </fieldset>
-        <input type="submit" value="Responder">
-        </form>
-        <footer>
-            <h4>Copyrigth - Todos los derechos reservados</h4>
-        </footer>
-    </body>
-    </html>
+    <section>
+        <div class="sobre-nosotros">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2>
+                Quienes Somos: <br>
+            </h2>
+            <center>
+            <img src="{% static 'img/uno.jpg' %}" alt="Luciano"><br>
+            <img src="{% static 'img/dos.jpg' %}" alt="Macarena"><br>
+            <img src="{% static 'img/tres.jpg' %}" alt="Javier"><br>
+            <img src="{% static 'img/cuatro.jpg' %}" alt="Javier"><br>
+            <img src="{% static 'img/cinco.jpg' %}" alt="Romero"><br>
+            </center>
+        </div>
+    </section>
+    <footer>
+        <h4>Copyrigth - Todos los derechos reservados</h4>
+    </footer>
+</body>
+</html>
