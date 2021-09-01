@@ -19,9 +19,13 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static '/site.webmanifest'%}">
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Sobre Nosotros</title>
+    <title>Registro</title>
     <script src="https://kit.fontawesome.com/7cd27a3b23.js" crossorigin="anonymous"></script>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/estilo.css" %}'>
@@ -40,59 +44,46 @@
                 <li class="nav__li">
                     <a href="{% url 'quiz:ruta_index' %}"><img src="{%static 'img/Tc.png' %}" alt=""></a>
                 </li>
-                <li class="nav__li fas fa-user-plus">
-                    <a href="{% url 'quiz:ruta_registrarse' %}">Registrarse</a>
-                </li>
                 <li class="nav__li fas fa-sign-in-alt">
                     <a href="{% url 'quiz:login' %}">Ingresar</a>
                 </li>
+                <li class="nav__li fas fa-users">
+                    <a href="{% url 'quiz:contact' %}">Sobre Nosotros</a>
+                </li>
+                <a href="{% url 'quiz:ruta_iniciar' %}"><button class="nav__a"><b class="type fas fa-gamepad"></b></a></button> </a>
                 
             </ul>
         </nav>
     </header>
-    <div class="flex-about-us">
-        <div class="flex-us">
-            <h1>
-                Quienes Somos
-            </h1>
-            <div class="flex__img">
-                <div class="flex__1">
-                    <img src="{% static 'img/cuatro.jpg' %}" alt="Javier"><br>
-                    <br>
-                    <b>Balbiano, Luciano</b>
-                    <br>
-                    <b>Front End - Developer</b>
-                </div>
-                <div class="flex__2">
-                    <img src="{% static 'img/dos.jpg' %}" alt="Macarena"><br>
-                    <b>Zacarias, Macarena</b>
-                    <br>
-                    <b>Back End - Developer</b>
-                </div>
-                <div class="flex__3">
-                    <img src="{% static 'img/tres.jpg' %}" alt="Javier"><br>
-                    <b>Sotelo, Javier</b>
-                    <br>
-                    <b>Back End - Developer</b>
-                </div>
-                <div class="flex__4">
-                    <img src="{% static 'img/uno.jpg' %}" alt="Javier"><br>
-                    <b>Romero, Allesandro</b>
-                    <br>
-                    <b>Back End - Developer</b>
-                </div>
-                <div class="flex__5">
-                    <img src="{% static 'img/cinco.jpg' %}" alt="Romero"><br>
-                    <b>Rodrigo, Javier</b>
-                    <br>
-                    <b>Back End - Developer</b>   
-                </div>
+    <div class="flex-container-dos">
+        <form class="form" method="post">
+            {% csrf_token %}
+            <h2>
+                Crea tu cuenta
+            </h2>
+            <div class="form__section">
+                <input type="text" class="form__input" placeholder="Escribí tu Usuario" name="username"  required id="id_username">
             </div>
-        </div>
-    </div class="flex-container">
+            <div class="form__section">
+                <input type="password" class="form__input" placeholder="Contraseña" name="password1"  autocomplete="new-password" required id="id_password1">
+            </div>
+            <div class="form__section">
+                <input type="password" class="form__input" placeholder="Repetir Contraseña" name="password2" autocomplete="new-password" required id="id_password2">
+            </div>
+            <div class="form__section">
+                <input href="{% url 'quiz:ruta_iniciar' %}" type="submit" value="Crear" class="form__input">
+            </div>
+            <div>
+                <table>
+
+                </table>
+            </div>
+        </form>
+    </div>
     <footer class="footer">
         Copyrigth - Todos los derechos reservados. <br>
         TriviaChaco Inc. 
     </footer>
 </body>
 </html>
+ 
