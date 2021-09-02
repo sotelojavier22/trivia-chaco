@@ -1,6 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
-
 from django.urls import reverse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
@@ -8,8 +7,6 @@ from django.contrib.auth.decorators import login_required
 
 
 from .models import Pregunta, Opcion, Respuesta
-from .forms import CustomUserCreateForm
-from django.contrib import messages
 
 def index(request):
     return render(request, 'quiz/index.html', {})
@@ -26,7 +23,7 @@ def registrarse(request):
             return redirect('quiz:ruta_iniciar')
     else:
         form = UserCreationForm()
-        return render(request, 'quiz/form_registro.html',{'form':form})
+    return render(request, 'quiz/form_registro.html',{'form':form})
 
 @login_required(login_url='/quiz/login/')
 def iniciar(request):
@@ -54,16 +51,12 @@ def responder(request, id_pregunta):
 def mostrar_resultado(request):
     return HttpResponse("ganaste!")
 
-
-@login_required(login_url='/quiz/login/')
 def contact(request):
     return render (request, 'quiz/contact.html')
 
 @login_required(login_url='/quiz/login/')
-def jugar(request):
+def jugar(request): 
     return render (request, 'juego.html', {})
 
 
-@login_required(login_url='/quiz/login/')
-def login(request):
-    return render (request, 'registration/login.html')
+

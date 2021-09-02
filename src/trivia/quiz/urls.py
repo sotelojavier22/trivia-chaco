@@ -14,9 +14,4 @@ urlpatterns = [
     path('pregunta/<int:id_pregunta>/responder',views.responder, name='ruta_responder'),
     path('resultado/', views.mostrar_resultado, name='ruta_resultado'),
     path('contact/', views.contact, name='contact'),
-    path('iniciar/', views.jugar, name='jugar'),
-    path('login/', views.login, name='login'),
-
-
-
 ]
