@@ -76,8 +76,7 @@ def mostrar_resultado(request):
        if r.puntaje == 1:
             puntaje_total += 1
 
-
-    return HttpResponse("puntos " + str(puntaje_total) + " ganaste! " )
+    return render(request, 'quiz/resultado.html', {'puntaje': puntaje_total})
 
 def contact(request):
     return render (request, 'quiz/contact.html')
