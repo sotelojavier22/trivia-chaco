@@ -39,18 +39,45 @@ def vista_pregunta(request, pregunta_orden):
 @login_required(login_url='/quiz/login/')
 def responder(request, id_pregunta):
     pregunta = get_object_or_404(Pregunta, pk = id_pregunta)
+    id_usuario = request.user.id
+    id_opcion = request.POST['opcion']
+
+    print('id_pregunta', pregunta.id)
+    print('id_opcion', id_opcion)
+
+    seleccionada = pregunta.opcion_set.get(pk=id_opcion)
+
+  
+    if seleccionada.es_correcta:
+        puntaje = 1
+    else:
+        puntaje = 0
+
+
+    respuesta = Respuesta(pregunta=pregunta, opcion=seleccionada, usuario=id_usuario, puntaje=puntaje)
+
+    respuesta.save()
+
 
     if pregunta.orden >= 5:
-        return HttpResponseRedirect(reverse('quiz:ruta_resultado'))
+        return redirect(reverse('quiz:ruta_resultado'))
     else:
         siguiente = pregunta.orden + 1
-        return HttpResponseRedirect(reverse('quiz:ruta_pregunta', args=(siguiente,)))
+        return redirect(reverse('quiz:ruta_pregunta', args=(siguiente,)))
 
 
 @login_required(login_url='/quiz/login/')
 def mostrar_resultado(request):
-    return HttpResponse("ganaste!")
+    id_usuario = request.user.id
+    respuestas = Respuesta.objects.filter(usuario=id_usuario)
 
+    puntaje_total = 0
+    for r in respuestas:
+       if r.puntaje == 1:
+            puntaje_total += 1
+
+
+    return HttpResponse("puntos " + str(puntaje_total) + " ganaste! " )
 
 def contact(request):
     return render (request, 'quiz/contact.html')
