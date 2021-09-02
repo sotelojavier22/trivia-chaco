@@ -51,7 +51,7 @@
                     <a href="{% url 'quiz:contact' %}">Sobre Nosotros</a>
                 </li>
                 <a href="{% url 'quiz:ruta_iniciar' %}"><button class="nav__a"><b class="type fas fa-gamepad"></b></a></button> </a>
-                
+
             </ul>
         </nav>
     </header>
@@ -59,36 +59,35 @@
       {% if form.errors %}
       <p style="color: red">Your username and password didn't match. Please try again.</p>
       {% endif %}
-        <form class="form" method="post">
-            {% csrf_token %}
-            <h2>
-                Ingresá
-            </h2>
-            <input type="hidden" name="next" value="{{ next }}" />
-  
-            <div class="form__section">
-                <input type="text" class="form__input" placeholder="Escribí tu Usuario" name="username"  required id="id_username">
-          
-            </div>
-            <div class="form__section">
-                <input type="password" class="form__input" placeholder="Contraseña" name="password"  autocomplete="password" required id="id_password">
-            </div>
-           
-            <div class="form__section">
-              <input  type="submit"  class="form__input" value="Entrar"></input>
-                           </div>
-            <div>
-                <table>
+      <form class="form" method="post">
+        {% csrf_token %}
+        <h2>
+            Ingresá
+        </h2>
+        <input type="hidden" name="next" value="{{ next }}" />
 
-                </table>
-            </div>
-        </form>
-    </div>
-    <footer class="footer">
-        Copyrigth - Todos los derechos reservados. <br>
-        TriviaChaco Inc. 
-    </footer>
+        <div class="form__section">
+            <input type="text" class="form__input" placeholder="Escribí tu Usuario" name="username"  required id="id_username">
+
+        </div>
+        <div class="form__section">
+            <input type="password" class="form__input" placeholder="Contraseña" name="password"  autocomplete="password" required id="id_password">
+        </div>
+
+        <div class="form__section">
+          <input  type="submit"  class="form__input" value="Entrar"></input>
+                       </div>
+        <div>
+            <table>
+
+            </table>
+        </div>
+    </form>
+</div>
+<footer class="footer">
+    Copyrigth - Todos los derechos reservados. <br>
+    TriviaChaco Inc. 
+</footer>
 </body>
 </html>
-
 
