@@ -51,12 +51,11 @@ def responder(request, id_pregunta):
 def mostrar_resultado(request):
     return HttpResponse("ganaste!")
 
+
 def contact(request):
     return render (request, 'quiz/contact.html')
 
 @login_required(login_url='/quiz/login/')
 def jugar(request): 
     return render (request, 'juego.html', {})
-
-
 
