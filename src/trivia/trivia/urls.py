@@ -19,6 +19,6 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',RedirectView.as_view(pattern_name='quiz:ruta_iniciar')),
+    path('',RedirectView.as_view(pattern_name='quiz:ruta_index')),
     path('quiz/', include('quiz.urls')),
 ]
