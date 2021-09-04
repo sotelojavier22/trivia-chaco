@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static "img/apple-icon-57x57.png" %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static "img/apple-icon-60x60.png" %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static "img/apple-icon-72x72.png" %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static "img/apple-icon-76x76.png" %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static "img/apple-icon-114x114.png" %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static "img/apple-icon-120x120.png" %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static "img/apple-icon-144x144.png" %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static "img/apple-icon-152x152.png" %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "img/apple-icon-180x180.png" %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static "img/android-icon-192x192.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static "img/favicon-96x96.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "img/favicon-16x16.png" %}">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static '/site.webmanifest'%}">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registro</title>
+    <script src="https://kit.fontawesome.com/7cd27a3b23.js" crossorigin="anonymous"></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/estilo.css" %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/normalize.css" %}'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="Copyrigth" content="triviachaco Inc.">
+    <meta name="robots" content="index">
+    <script src='main.js'></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav__ul">
+                <li class="nav__li">
+                    <a href="{% url 'quiz:ruta_index' %}"><img src="{%static 'img/Tc.png' %}" alt=""></a>
+                </li>
+                <li class="nav__li fas fa-sign-in-alt">
+                    <a href="{% url 'quiz:ruta_registrarse' %}">Registrarse</a>
+                </li>
+                <li class="nav__li fas fa-users">
+                    <a href="{% url 'quiz:contact' %}">Sobre Nosotros</a>
+                </li>
+                <a href="{% url 'quiz:ruta_iniciar' %}"><button class="nav__a"><b class="type fas fa-gamepad"></b></a></button> </a>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="flex-container-dos">
+      {% if form.errors %}
+      <p style="color: red">Your username and password didn't match. Please try again.</p>
+      {% endif %}
+      <form class="form" method="post">
+        {% csrf_token %}
+        <h2>
+            Ingresá
+        </h2>
+        <input type="hidden" name="next" value="{{ next }}" />
+
+        <div class="form__section">
+            <input type="text" class="form__input" placeholder="Escribí tu Usuario" name="username"  required id="id_username">
+
+        </div>
+        <div class="form__section">
+            <input type="password" class="form__input" placeholder="Contraseña" name="password"  autocomplete="password" required id="id_password">
+        </div>
+
+        <div class="form__section">
+          <input  type="submit"  class="form__input" value="Entrar"></input>
+                       </div>
+        <div>
+            <table>
+
+            </table>
+        </div>
+    </form>
+</div>
+<footer class="footer">
+    Copyrigth - Todos los derechos reservados. <br>
+    TriviaChaco Inc. 
+</footer>
+</body>
+</html>
+
