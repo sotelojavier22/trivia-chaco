@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 
-from .models import Pregunta, Opcion, Respuesta
+from .models import Pregunta, Opcion, Respuesta, Partida
 
 def index(request):
     return render(request, 'quiz/index.html', {})
@@ -75,7 +75,9 @@ def mostrar_resultado(request):
     for r in respuestas:
        if r.puntaje == 1:
             puntaje_total += 1
-
+    
+    partidas = Partida(puntaje_total = puntaje_total)
+    partidas.save()
     return render(request, 'quiz/resultado.html', {'puntaje': puntaje_total})
 
 def contact(request):
