@@ -15,7 +15,7 @@ class PreguntaAdmin(admin.ModelAdmin):
     inlines = [OpcionEnLinea]
     list_display= ['enunciado','categoria','orden']
 
-admin.site.register(Pregunta)
+admin.site.register(Pregunta,PreguntaAdmin)
 
 import json
 from django.core.serializers.json import DjangoJSONEncoder
