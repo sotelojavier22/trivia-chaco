@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms.fields import DateField
 
 class Pregunta(models.Model):
     LISTA_CATEGORIAS = [
@@ -28,5 +29,11 @@ class Respuesta(models.Model):
     puntaje = models.IntegerField(default=0)
     def __str__(self):
         return str(self.opcion)
+
+class Partida(models.Model):
+    fecha = models.DateField(auto_now_add=True)
+    puntaje_total = models.IntegerField(default=0)
+    def __str__(self):
+        return str(self.fecha)
 
 
