@@ -75,6 +75,7 @@ def mostrar_resultado(request):
     for r in respuestas:
        if r.puntaje == 1:
             puntaje_total += 1
+
     
     partidas = Partida(puntaje_total = puntaje_total)
     partidas.save()

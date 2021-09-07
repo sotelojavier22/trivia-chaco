@@ -53,17 +53,19 @@
     <div class="flex-game">
         <form class="flex-game__form" action="{% url 'quiz:ruta_responder' pregunta.id %}" method="post">
             {% csrf_token %}
-            <div class="flex-game__div">
-                <legend><h2>{{ pregunta.enunciado }}</h2></legend>
-                <div class="flex-game__checkbox">
-                    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-                    {% for opcion in pregunta.opcion_set.all %}
-                        <input type="radio" name="opcion" id="opcion{{ forloop.counter }}" value="{{ opcion.id }}">
-                        <label for="opcion{{ forloop.counter }}">{{ opcion.texto_opcion }}</label>
-                    {% endfor %}
+                <div class="flex__center">
+                    <div class="flex-game__legend">
+                        <legend><h2>{{ pregunta.enunciado }}</h2></legend>
+                    </div>
+                    <div class="flex-game__checkbox">
+                        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+                        {% for opcion in pregunta.opcion_set.all %}
+                            <input type="radio" name="opcion" id="opcion{{ forloop.counter }}" value="{{ opcion.id }}">
+                            <label for="opcion{{ forloop.counter }}"><b>{{ opcion.texto_opcion }}</b></label>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            <input class="flex-game__button" type="submit" value="Responder">
+                <div><input class="flex-game__button" type="submit" value="Responder"></div>
         </form>
     </div>
         <footer class="footer">
