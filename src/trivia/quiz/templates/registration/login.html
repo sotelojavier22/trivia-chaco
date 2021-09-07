@@ -44,13 +44,13 @@
                 <li class="nav__li">
                     <a href="{% url 'quiz:ruta_index' %}"><img src="{%static 'img/Tc.png' %}" alt=""></a>
                 </li>
-                <li class="nav__li fas fa-sign-in-alt">
+                <li class="nav__li fas fa-user-plus">
                     <a href="{% url 'quiz:ruta_registrarse' %}">Registrarse</a>
                 </li>
                 <li class="nav__li fas fa-users">
                     <a href="{% url 'quiz:contact' %}">Sobre Nosotros</a>
                 </li>
-                <a href="{% url 'quiz:ruta_iniciar' %}"><button class="nav__a"><b class="type fas fa-gamepad"></b></a></button> </a>
+                <a class="nav__a" href="{% url 'quiz:ruta_iniciar' %}"><b class="type fas fa-gamepad"></b></a>
 
             </ul>
         </nav>
