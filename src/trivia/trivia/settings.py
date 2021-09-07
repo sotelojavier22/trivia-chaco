@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'bdtrivia',
         'HOST': '127.0.0.1',
         'USER': 'root',
-        'PASSWORD': 'infor9',
+        'PASSWORD': '@260698Lb',
     }
 }
 

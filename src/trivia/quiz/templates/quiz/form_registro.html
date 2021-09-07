@@ -50,7 +50,7 @@
                 <li class="nav__li fas fa-users">
                     <a href="{% url 'quiz:contact' %}">Sobre Nosotros</a>
                 </li>
-                <a href="{% url 'quiz:ruta_iniciar' %}"><b></b><button class="nav__a fas fa-gamepad"></button> </a>
+                <a class="nav__a" href="{% url 'quiz:ruta_iniciar' %}"><b class="type fas fa-gamepad"></b></a>
 
             </ul>
         </nav>
@@ -62,24 +62,21 @@
         <form class="form" method="post">
             {% csrf_token %}
             <h2>
-                Crea tu cuenta
+                Creá tu cuenta
             </h2>
-            <div class="form__section">
-                <input type="text" class="form__input" placeholder="Escribí tu Usuario" name="username"  required id="id_username">
-            </div>
-            <div class="form__section">
-                <input type="password" class="form__input" placeholder="Contraseña" name="password1"  autocomplete="new-password" required id="id_password1">
-            </div>
-            <div class="form__section">
-                <input type="password" class="form__input" placeholder="Repetir Contraseña" name="password2" autocomplete="new-password" required id="id_password2">
-            </div>
-            <div class="form__section">
-                <input href="{% url 'quiz:ruta_iniciar' %}" type="submit" value="Crear" class="form__input">
-            </div>
-            <div>
-                <table>
-
-                </table>
+            <div class="inputs">
+                <div class="form__section">
+                    <input type="text" class="form__input" placeholder="Escribí tu Usuario" name="username"  required id="id_username">
+                </div>
+                <div class="form__section">
+                    <input type="password" class="form__input" placeholder="Contraseña" name="password1"  autocomplete="new-password" required id="id_password1">
+                </div>
+                <div class="form__section">
+                    <input type="password" class="form__input" placeholder="Repetir Contraseña" name="password2" autocomplete="new-password" required id="id_password2">
+                </div>
+                <div class="form__section">
+                    <input href="{% url 'quiz:ruta_iniciar' %}" type="submit" value="Crear" class="form__input">
+                </div>
             </div>
         </form>
     </div>
